@@ -29,7 +29,8 @@ $(document).ready(() => {
   function signUpUser(email, password, clearance) {
     $.post("/api/signup", {
       email: email,
-      password: password
+      password: password,
+      clearance: clearance
     })
       .then(() => {
         window.location.replace("/members");
