@@ -26,12 +26,11 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Requiring our routes
-const router = require("./routes/html-routes.js");
+require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
-app.use(router);
 // Syncing our database and logging a message to the user upon success
-db.sequelize.sync().then(() => {
+db.sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",

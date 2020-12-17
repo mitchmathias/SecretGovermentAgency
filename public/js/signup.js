@@ -1,6 +1,6 @@
 $(document).ready(() => {
   // Getting references to our form and input
-  const signUpForm = $("form.signup");
+  const signUpForm = $("#signup-form");
   const emailInput = $("input#email-input");
   const passwordInput = $("input#password-input");
   const clearanceInput = $("input#clearance-input");
@@ -18,7 +18,7 @@ $(document).ready(() => {
       return;
     }
     // If we have an email and password, run the signUpUser function
-    signUpUser(userData.email, userData.password, user.clearance);
+    signUpUser(userData.email, userData.password, userData.clearance);
     emailInput.val("");
     passwordInput.val("");
     clearanceInput.val("");
