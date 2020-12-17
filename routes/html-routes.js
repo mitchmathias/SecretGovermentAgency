@@ -7,6 +7,14 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
+    res.render("login.hbs");
+  });
+
+  app.get("/signup", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
     res.render("signup.hbs");
   });
 
