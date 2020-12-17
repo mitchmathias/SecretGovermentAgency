@@ -10,7 +10,7 @@ $(document).ready(() => {
     event.preventDefault();
     const userData = {
       email: emailInput.val().trim(),
-      password: passwordInput.val().trim(),
+      password: passwordInput.val().trim()
     };
 
     if (!userData.email || !userData.password) {
@@ -28,7 +28,6 @@ $(document).ready(() => {
     $.post("/api/login", {
       email: email,
       password: password
-      
     })
       .then(() => {
         window.location.replace("/members");
