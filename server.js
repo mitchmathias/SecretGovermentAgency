@@ -26,11 +26,10 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Requiring our routes
-const router = require("./routes/html-routes.js")(router);
+const router = require("./routes/html-routes.js");
 require("./routes/api-routes.js")(app);
 
 app.use(router);
-
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {

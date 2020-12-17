@@ -53,19 +53,19 @@ module.exports = function(app) {
   });
 
   // Authentication checker for route
-  // app.get("/api/all-secrets", isAuthenticated, (req, res) => {
-  //   switch (req.user.clearance) {
-  //   case 1:
-  //     res.json({ level: 1 });
-  //     break;
-  //   case 2:
-  //     res.json({ level: 2 });
-  //     break;
-  //   case 3:
-  //     res.json({ level: 3 });
-  //     break;
-  //   default:
-  //     res.sendStatus(403);
-  //   }
-  // });
+  app.get("/api/all-secrets", (req, res) => {
+    switch (req.user.clearance) {
+      case 1:
+        res.json({ level: 1 });
+        break;
+      case 2:
+        res.json({ level: 2 });
+        break;
+      case 3:
+        res.json({ level: 3 });
+        break;
+      default:
+        res.sendStatus(403);
+    }
+  });
 };

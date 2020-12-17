@@ -1,6 +1,4 @@
 // Requiring path to so we can use relative routes to our HTML files
-const path = require("path");
-
 const express = require("express");
 
 const router = express.Router();
@@ -13,7 +11,7 @@ router.get("/", (req, res) => {
   if (req.user) {
     res.redirect("/members");
   }
-  res.render("signup");
+  res.render("signup.hbs");
 });
 
 router.get("/login", (req, res) => {
@@ -21,13 +19,16 @@ router.get("/login", (req, res) => {
   if (req.user) {
     res.redirect("/members");
   }
-  res.render(path.join(__dirname, "../views/login.hbs"));
+  res.render("login.hbs");
 });
 
 // Here we've add our isAuthenticated middleware to this route.
 // If a user who is not logged in tries to access this route they will be redirected to the signup page
 router.get("/members", isAuthenticated, (req, res) => {
-  res.render(path.join(__dirname, "../views/members.hbs"));
+  if (req.user) {
+    res.redirect("/members");
+  }
+  res.render("login.hbs");
 });
 
 module.exports = router;
