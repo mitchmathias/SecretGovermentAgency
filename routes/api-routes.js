@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 // const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
@@ -53,22 +54,17 @@ module.exports = function(app) {
     }
   });
 
-
   // Authentication checker for route
-  app.get("/api/all-secrets", (req, res) => {
+  app.get("/api/all-secrets", isAuthenticated, (req, res) => {
     switch (req.user.clearance) {
       case 1:
-        res.json({ level: 1 });
-        break;
+        return res.json({ level: 1 });
       case 2:
-        res.json({ level: 2 });
-        break;
+        return res.json({ level: 2 });
       case 3:
-        res.json({ level: 3 });
-        break;
+        return res.json({ level: 3 });
       default:
-        res.sendStatus(403);
+        return res.sendStatus(403);
     }
   });
-
 };
