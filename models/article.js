@@ -1,13 +1,11 @@
-// Creating our Srticle model
+// Creating our Article model
 module.exports = function(sequelize, DataTypes) {
   const Article = sequelize.define("Article", {
-    // The email cannot be null, and must be a proper email before creation
     title: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true
     },
-    // The password cannot be null
     body: {
       type: DataTypes.TEXT,
       allowNull: false
@@ -22,4 +20,5 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
   Article.sync();
+  return Article;
 };
