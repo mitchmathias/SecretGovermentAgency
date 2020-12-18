@@ -1,7 +1,7 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
-const isAuthenticated = require("../config/middleware/isAuthenticated");
+// const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -21,7 +21,8 @@ module.exports = function(app) {
   app.post("/api/signup", (req, res) => {
     db.User.create({
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      clearance: req.body.clearance
     })
       .then(() => {
         res.redirect(307, "/api/login");
@@ -51,17 +52,4 @@ module.exports = function(app) {
       });
     }
   });
-
-  // Authentication checker for route
-  app.get("/api/all-secrets", isAuthenticated, (req,res) => {
-    switch(req.user.clearance){
-      case 1: res.json({ level: 1 })
-      break
-      case 2: res.json({ level: 2 })
-      break
-      case 3: res.json({ level: 3 })
-      break
-      default: res.sendStatus(403)
-    }
-  })
 };
