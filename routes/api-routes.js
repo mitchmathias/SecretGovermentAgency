@@ -53,6 +53,7 @@ module.exports = function(app) {
     }
   });
 
+
   // Authentication checker for route
   app.get("/api/all-secrets", (req, res) => {
     switch (req.user.clearance) {
@@ -69,4 +70,5 @@ module.exports = function(app) {
         res.sendStatus(403);
     }
   });
+
 };
