@@ -15,10 +15,9 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     position: {
-      type: BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false
     }
   });
-  Article.sync();
   return Article;
 };
