@@ -40,4 +40,26 @@ module.exports = function(app) {
     // If the user already has an account send them to the members page
     res.render("nosecrets");
   });
+
+  //Routes for secret files
+  app.get("/level1", isAuthenticated, (req, res) => {
+    if (req.user) {
+      res.render("level1");
+    }
+    // res.render("nosecrets");
+  });
+
+  app.get("/level2", isAuthenticated, (req, res) => {
+    if (req.user) {
+      res.render("level2");
+    }
+    // res.render("nosecrets");
+  });
+
+  app.get("/level3", isAuthenticated, (req, res) => {
+    if (req.user) {
+      res.render("level3");
+    }
+    // res.render("nosecrets");
+  });
 };
