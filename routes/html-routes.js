@@ -7,7 +7,7 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.render("login");
+    res.render("homepage");
   });
 
   app.get("/signup", (req, res) => {
@@ -33,5 +33,11 @@ module.exports = function(app) {
       res.render("members");
     }
     res.render("login");
+  });
+
+  // Files for non authenticated users
+  app.get("/nosecrets", (req, res) => {
+    // If the user already has an account send them to the members page
+    res.render("nosecrets");
   });
 };

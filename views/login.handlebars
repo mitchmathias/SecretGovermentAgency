@@ -1,29 +1,50 @@
- <div class="container my-5">
-    <div class="row justify-content-center">
-      <div class="col-4">
-        <h3>Log In</h3>
-        
-        <form id="login-form" class="needs-validation" novalidate>
-          <div class="form-group">
-            <label for="email">E-mail Address</label>
-            <input type="text" class="form-control" id="email-input" required>
-          </div>
-          <div class="form-group">
-            <label for="Password">Password </label>
-            <input type="password" class="form-control" id="password-input" required>
-             <div id = "alert"></div>
-
-          </div>
-          <div class="form-group loginbutton">
-            <button type="submit" class="btn btn-primary" id = "logInBtn">Log In</button>
-            <br>
-            <br>
-            <a class="nav-item nav-link" href="signup">  Need an account ? => Sign Up</a>
-          </div>
-        </form>
-      </div>
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Department of Secret Information
+      </h1>
+      <h2 class="subtitle">
+        Breakout Room 2 Federal Branch </h2>
     </div>
   </div>
+</section>
 
+
+<div class="card signUp">
+  <div class="card-content">
+    <p class="subtitle">
+      Login
+    </p>
+    <form id="login-form" class="needs-validation" novalidate>
+      <div class="form-group">
+        <label for="email">E-mail Address</label>
+        <input type="text" class="form-control" id="email-input" required>
+      </div>
+      <div class="form-group">
+        <label for="Password">Password </label>
+        <input type="password" class="form-control" id="password-input" required>
+        <div id="alert"></div>
+
+      </div>
+      <div class="form-group">
+        <button type="submit" class="button is-light" id="logInBtn">Log In</button>
+      </div>
+      <br>
+      <div>
+        <p class="subtitle">Don't have an Account yet?</p>
+        <a class="button is-light" href="signup">Sign Up</a></p>
+      </div>
+    </form>
+  </div>
+
+</div>
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p> All Information on this website is classified as <strong>Top Secret</strong> and anyone viewing it agrees to keep it secret.</p>
+    <p>Willfully leaking any information on this page is a federal crime and punishable by a minimun <strong>100 years</strong> in Prison and a <strong>$1,000,000,000</strong>  fine.
+    </p>
+  </div>
+</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="/js/login.js"></script>
