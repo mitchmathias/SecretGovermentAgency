@@ -42,6 +42,11 @@ module.exports = function(app) {
     return res.render("nosecrets");
   });
 
+  app.get("/fakedoc", (req, res) => {
+    // If the user already has an account send them to the members page
+    return res.render("fakedoc");
+  });
+
   //Routes for secret files
   app.get("/level/:level", isAuthenticated, (req, res) => {
     if (req.user && req.user.clearance >= req.params.level) {
@@ -61,5 +66,10 @@ module.exports = function(app) {
     } else {
       return res.render("nosecrets");
     }
+  });
+
+  app.get("/userdoc", (req, res) => {
+    // If the user already has an account send them to the members page
+    return res.render("userdoc");
   });
 };
