@@ -81,7 +81,9 @@ module.exports = function(app) {
           clearance: 1
         }
       })
-        .then(results => res.json(results))
+        .then(results => {
+          return res.json(results);
+        })
         .catch(err => {
           console.log(err);
           return res.json(err);
@@ -98,7 +100,9 @@ module.exports = function(app) {
           clearance: 2
         }
       })
-        .then(results => res.json(results))
+        .then(results => {
+          return res.json(results);
+        })
         .catch(err => {
           console.log(err);
           return res.json(err);
@@ -115,7 +119,9 @@ module.exports = function(app) {
           clearance: 3
         }
       })
-        .then(results => res.json(results))
+        .then(results => {
+          return res.json(results);
+        })
         .catch(err => {
           console.log(err);
           return res.json(err);
