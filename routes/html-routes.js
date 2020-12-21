@@ -72,5 +72,4 @@ module.exports = function(app) {
     // If the user already has an account send them to the members page
     return res.render("userdoc");
   });
-
 };
