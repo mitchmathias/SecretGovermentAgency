@@ -4,7 +4,6 @@ const passport = require("../config/passport");
 
 // const { Op } = require("sequelize");
 // const { handlebars } = require("hbs");
-
 // const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
@@ -129,7 +128,10 @@ module.exports = function(app) {
 
   app.get("/my-profile", (req, res) => {
     if (req.user) {
-      res.render("profile", { clearance: req.user.clearance });
+      res.render("profile", {
+        clearance: req.user.clearance,
+        name: req.user.email
+      });
     }
   });
 };
