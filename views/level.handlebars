@@ -49,13 +49,8 @@
           <a class="navbar-item" href="/level/3">
             Level 3
           </a>
-          
         </div>
       </div>
-      
-      <a class="navbar-item" href="/my-profile">
-        My Profile
-      </a>
     </div>
 
     <div class="navbar-end">
@@ -72,9 +67,22 @@
 
 <div class="container is-centered">
   <div class="notification is-light">
-    <p class="title">Welcome <span class="member-name"></span></p> 
+    <p class="title">Secrets: Clearance level 1</p> 
   </div>
 </div>
+{{#each articles}}
+<div class="tile is-ancestor">
+  <div class="tile is-verticle is-parent">
+    <div class="tile is-child is-box">
+      <p>Clearance: {{clearance}}</p>
+      <p class="title">{{title}}</p>
+      <p>{{body}}</p>
+      <p>Our position: {{position}}</p>
+    </div>
+  </div>
+</div>
+{{/each}}
+
 <footer class="footer">
   <div class="content has-text-centered">
     <p> All Information on this website is classified as <strong>Top Secret</strong> and anyone viewing it agrees to keep it secret.</p>
@@ -82,6 +90,3 @@
     </p>
   </div>
 </footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="/js/members.js"></script>

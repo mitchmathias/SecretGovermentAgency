@@ -76,6 +76,7 @@ module.exports = function(app) {
 
   app.get("/api/level1", (req, res) => {
     if (req.user) {
+      console.log("Search level 1");
       db.Article.findAll({
         where: {
           clearance: 1
