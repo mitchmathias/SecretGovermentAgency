@@ -1,15 +1,15 @@
- <section class="hero is-light">
+<section class="hero is-light">
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
         Department of Secret Information
       </h1>
       <h2 class="subtitle">
-        Breakout Room 2 Federal Branch
-      </h2>
+        Breakout Room 2 Federal Branch </h2>
     </div>
   </div>
 </section>
+
 
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
@@ -26,11 +26,11 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href="/">
+      <a class="navbar-item" href="/members">
         Home
       </a>
 
-      <a class="navbar-item" href="/fakedoc">
+      <a class="navbar-item">
         Documentation
       </a>
 
@@ -40,7 +40,6 @@
         </a>
 
         <div class="navbar-dropdown">
-<<<<<<< HEAD
           <a class="navbar-item" href="/level/1">
             Level 1
           </a>
@@ -48,18 +47,8 @@
             Level 2
           </a>
           <a class="navbar-item" href="/level/3">
-=======
-          <a class="navbar-item" href="/nosecrets">
-            Level 1
-          </a>
-          <a class="navbar-item" href="/nosecrets">
-            Level 2
-          </a>
-          <a class="navbar-item" href="/nosecrets">
->>>>>>> main
             Level 3
           </a>
-          
         </div>
       </div>
     </div>
@@ -67,14 +56,37 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary" href="/signup">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light" href="/login">
-            Log in
+          <a class="button is-light" href="/logout">
+            Logout
           </a>
         </div>
       </div>
     </div>
   </div>
 </nav>
+
+<div class="container is-centered">
+  <div class="notification is-light">
+    <p class="title">Secrets: Clearance level 1</p> 
+  </div>
+</div>
+{{#each articles}}
+<div class="tile is-ancestor">
+  <div class="tile is-verticle is-parent">
+    <div class="tile is-child is-box">
+      <p>Clearance: {{clearance}}</p>
+      <p class="title">{{title}}</p>
+      <p>{{body}}</p>
+      <p>Our position: {{position}}</p>
+    </div>
+  </div>
+</div>
+{{/each}}
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p> All Information on this website is classified as <strong>Top Secret</strong> and anyone viewing it agrees to keep it secret.</p>
+    <p>Willfully leaking any information on this page is a federal crime and punishable by a minimun <strong>100 years</strong> in Prison and a <strong>$1,000,000,000</strong>  fine.
+    </p>
+  </div>
+</footer>

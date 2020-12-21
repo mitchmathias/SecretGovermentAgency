@@ -1,6 +1,7 @@
 module.exports = function(app) {
   // Requiring our custom middleware for checking if a user is logged in
   const isAuthenticated = require("../config/middleware/isAuthenticated");
+  const db = require("../models");
 
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
@@ -47,25 +48,24 @@ module.exports = function(app) {
   });
 
   //Routes for secret files
-  app.get("/level1", isAuthenticated, (req, res) => {
-    if (req.user && req.user.clearance >= 1) {
-      return res.render("level1");
+  app.get("/level/:level", isAuthenticated, (req, res) => {
+    if (req.user && req.user.clearance >= req.params.level) {
+      db.Article.findAll({
+        where: {
+          clearance: req.params.level
+        }
+      })
+        .then(results => {
+          const articles = JSON.parse(JSON.stringify(results));
+          return res.render("level", { articles, level: req.params.level });
+        })
+        .catch(err => {
+          console.log(err);
+          return res.sendStatus(500);
+        });
+    } else {
+      return res.render("nosecrets");
     }
-    return res.render("nosecrets");
-  });
-
-  app.get("/level2", isAuthenticated, (req, res) => {
-    if (req.user && req.user.clearance >= 2) {
-      return res.render("level2");
-    }
-    return res.render("nosecrets");
-  });
-
-  app.get("/level3", isAuthenticated, (req, res) => {
-    if (req.user && req.user.clearance >= 3) {
-      return res.render("level3");
-    }
-    return res.render("nosecrets");
   });
 
   app.get("/userdoc", (req, res) => {
