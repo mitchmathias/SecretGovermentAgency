@@ -12,7 +12,7 @@ module.exports = function(app) {
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     // Sending back a password, even a hashed password, isn't a good idea
-    res.json({
+    return res.json({
       email: req.user.email,
       id: req.user.id,
       token: req.user.token
@@ -30,29 +30,28 @@ module.exports = function(app) {
       ip: req.body.ip
     })
       .then(() => {
-        res.redirect(307, "/api/login");
+        return res.redirect(307, "/api/login");
       })
       .catch(err => {
-        res.status(401).json(err);
+        return res.status(401).json(err);
       });
   });
 
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
-    res.redirect("/");
+    return res.redirect("/");
   });
 
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", (req, res) => {
     if (!req.user) {
       // The user is not logged in, send back an empty object
-      res.json({});
-    } else {
-      // Otherwise send back the user's email and id
-      // Sending back a password, even a hashed password, isn't a good idea
-      res.json(req.user);
+      return res.json({});
     }
+    // Otherwise send back the user's email and id
+    // Sending back a password, even a hashed password, isn't a good idea
+    return res.json(req.user);
   });
   // Authentication checker for route
   // app.get("/api/all-secrets", (req, res) => {
@@ -85,10 +84,10 @@ module.exports = function(app) {
         .then(results => res.json(results))
         .catch(err => {
           console.log(err);
-          res.json(err);
+          return res.json(err);
         });
     } else {
-      res.sendStatus(403);
+      return res.sendStatus(403);
     }
   });
 
@@ -102,10 +101,10 @@ module.exports = function(app) {
         .then(results => res.json(results))
         .catch(err => {
           console.log(err);
-          res.json(err);
+          return res.json(err);
         });
     } else {
-      res.sendStatus(403);
+      return res.sendStatus(403);
     }
   });
 
@@ -119,16 +118,16 @@ module.exports = function(app) {
         .then(results => res.json(results))
         .catch(err => {
           console.log(err);
-          res.json(err);
+          return res.json(err);
         });
     } else {
-      res.sendStatus(403);
+      return res.sendStatus(403);
     }
   });
 
   app.get("/my-profile", (req, res) => {
     if (req.user) {
-      res.render("profile", {
+      return res.render("profile", {
         clearance: req.user.clearance,
         name: req.user.email
       });
