@@ -112,7 +112,6 @@ module.exports = function(app) {
   });
 
   app.get("/api/level3", (req, res) => {
-
     if (req.user) {
       db.Article.findAll({
         where: {
