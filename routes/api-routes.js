@@ -1,16 +1,10 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-const { Op } = require("sequelize");
-const { handlebars } = require("hbs");
->>>>>>> 37bb49f6ee6d5946bd03933b8c05fd759a411df6
-=======
+
 // const { Op } = require("sequelize");
 // const { handlebars } = require("hbs");
->>>>>>> b03251380147a0118d9db8f572cf92b44e092fc9
+
 // const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
@@ -31,8 +25,6 @@ module.exports = function(app) {
   // otherwise send back an error
   app.post("/api/signup", (req, res) => {
     db.User.create({
-      firstname: req.body.firstname,
-      lastname: req.body.lastname,
       email: req.body.email,
       password: req.body.password,
       clearance: req.body.clearance,
@@ -64,9 +56,6 @@ module.exports = function(app) {
     }
   });
   // Authentication checker for route
-<<<<<<< HEAD
-  app.get("/api/all-secrets", (req, res) => {
-=======
   // app.get("/api/all-secrets", (req, res) => {
   //   console.log("here");
   //   if (req.user) {
@@ -122,7 +111,6 @@ module.exports = function(app) {
   });
 
   app.get("/api/level3", (req, res) => {
->>>>>>> b03251380147a0118d9db8f572cf92b44e092fc9
     if (req.user) {
       db.Article.findAll({
         where: {
