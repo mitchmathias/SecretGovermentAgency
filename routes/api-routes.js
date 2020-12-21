@@ -1,8 +1,8 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
-const { Op } = require("sequelize");
-const { handlebars } = require("hbs");
+// const { Op } = require("sequelize");
+// const { handlebars } = require("hbs");
 // const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
@@ -55,24 +55,65 @@ module.exports = function(app) {
   });
 
   // Authentication checker for route
-  app.get("/api/all-secrets", (req, res) => {
-    console.log("here");
-    // switch (req.user.clearance) {
-    //   case 1:
-    //     return res.json({ level: 1 });
-    //   case 2:
-    //     return res.json({ level: 2 });
-    //   case 3:
-    //     return res.json({ level: 3 });
-    //   default:
-    //     return res.sendStatus(403);
-    // }
+  // app.get("/api/all-secrets", (req, res) => {
+  //   console.log("here");
+  //   if (req.user) {
+  //     db.Article.findAll({
+  //       where: {
+  //         clearance: {
+  //           [Op.lte]: req.user.clearance
+  //         }
+  //       }
+  //     })
+  //       .then(results => res.json(results))
+  //       .catch(err => {
+  //         console.log(err);
+  //         res.json(err);
+  //       });
+  //   } else {
+  //     res.sendStatus(403);
+  //   }
+  // });
+
+  app.get("/api/level1", (req, res) => {
     if (req.user) {
       db.Article.findAll({
         where: {
-          clearance: {
-            [Op.lte]: req.user.clearance
-          }
+          clearance: 1
+        }
+      })
+        .then(results => res.json(results))
+        .catch(err => {
+          console.log(err);
+          res.json(err);
+        });
+    } else {
+      res.sendStatus(403);
+    }
+  });
+
+  app.get("/api/level2", (req, res) => {
+    if (req.user) {
+      db.Article.findAll({
+        where: {
+          clearance: 2
+        }
+      })
+        .then(results => res.json(results))
+        .catch(err => {
+          console.log(err);
+          res.json(err);
+        });
+    } else {
+      res.sendStatus(403);
+    }
+  });
+
+  app.get("/api/level3", (req, res) => {
+    if (req.user) {
+      db.Article.findAll({
+        where: {
+          clearance: 3
         }
       })
         .then(results => res.json(results))
