@@ -30,7 +30,7 @@
                 Home
             </a>
 
-            <a class="navbar-item">
+            <a class="navbar-item" href="userdoc">
                 Documentation
             </a>
 
@@ -54,26 +54,24 @@
             </div>
         </div>
 
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="buttons">
-                    <a class="button is-primary" href="signup">
-                        <strong>Sign up</strong>
-                    </a>
-                    <a class="button is-light" href="login">
-                        Log in
-                    </a>
-                </div>
-            </div>
-        </div>
     </div>
 </nav>
 
-<div id="clearId">
-    <p>
-        Name: {{name}}
+<div class="container is-centered">
+  <div class="notification is-light" id="clearId">
+       <p class="subtitle">
+        User: {{name}}
     </p>
-    <p>
+    <p class="subtitle">
         Clearance: {{clearance}}
     </p>
+  </div>
 </div>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p> All Information on this website is classified as <strong>Top Secret</strong> and anyone viewing it agrees to keep it secret.</p>
+    <p>Willfully leaking any information on this page is a federal crime and punishable by a minimun <strong>100 years</strong> in Prison and a <strong>$1,000,000,000</strong>  fine.
+    </p>
+  </div>
+</footer>
