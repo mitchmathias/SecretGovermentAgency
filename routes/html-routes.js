@@ -43,23 +43,26 @@ module.exports = function(app) {
 
   //Routes for secret files
   app.get("/level1", isAuthenticated, (req, res) => {
-    if (req.user) {
+    if (req.user && req.user.clearance >= 1) {
       res.render("level1");
+    } else {
+      res.render("nosecrets");
     }
-    // res.render("nosecrets");
   });
 
   app.get("/level2", isAuthenticated, (req, res) => {
-    if (req.user) {
+    if (req.user && req.user.clearance >= 2) {
       res.render("level2");
+    } else {
+      res.render("nosecrets");
     }
-    // res.render("nosecrets");
   });
 
   app.get("/level3", isAuthenticated, (req, res) => {
-    if (req.user) {
+    if (req.user && req.user.clearance >= 3) {
       res.render("level3");
+    } else {
+      res.render("nosecrets");
     }
-    // res.render("nosecrets");
   });
 };
