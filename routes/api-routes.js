@@ -1,7 +1,6 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
-const { Op } = require("sequelize");
 // const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
@@ -22,6 +21,8 @@ module.exports = function(app) {
   // otherwise send back an error
   app.post("/api/signup", (req, res) => {
     db.User.create({
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
       email: req.body.email,
       password: req.body.password,
       clearance: req.body.clearance,
@@ -52,20 +53,8 @@ module.exports = function(app) {
       res.json(req.user);
     }
   });
-
   // Authentication checker for route
   app.get("/api/all-secrets", (req, res) => {
-    console.log("here");
-    // switch (req.user.clearance) {
-    //   case 1:
-    //     return res.json({ level: 1 });
-    //   case 2:
-    //     return res.json({ level: 2 });
-    //   case 3:
-    //     return res.json({ level: 3 });
-    //   default:
-    //     return res.sendStatus(403);
-    // }
     if (req.user) {
       db.Article.findAll({
         where: {
