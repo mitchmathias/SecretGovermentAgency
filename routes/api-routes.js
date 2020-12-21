@@ -2,10 +2,15 @@
 const db = require("../models");
 const passport = require("../config/passport");
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 const { Op } = require("sequelize");
 const { handlebars } = require("hbs");
 >>>>>>> 37bb49f6ee6d5946bd03933b8c05fd759a411df6
+=======
+// const { Op } = require("sequelize");
+// const { handlebars } = require("hbs");
+>>>>>>> b03251380147a0118d9db8f572cf92b44e092fc9
 // const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
@@ -59,13 +64,69 @@ module.exports = function(app) {
     }
   });
   // Authentication checker for route
+<<<<<<< HEAD
   app.get("/api/all-secrets", (req, res) => {
+=======
+  // app.get("/api/all-secrets", (req, res) => {
+  //   console.log("here");
+  //   if (req.user) {
+  //     db.Article.findAll({
+  //       where: {
+  //         clearance: {
+  //           [Op.lte]: req.user.clearance
+  //         }
+  //       }
+  //     })
+  //       .then(results => res.json(results))
+  //       .catch(err => {
+  //         console.log(err);
+  //         res.json(err);
+  //       });
+  //   } else {
+  //     res.sendStatus(403);
+  //   }
+  // });
+
+  app.get("/api/level1", (req, res) => {
     if (req.user) {
       db.Article.findAll({
         where: {
-          clearance: {
-            [Op.lte]: req.user.clearance
-          }
+          clearance: 1
+        }
+      })
+        .then(results => res.json(results))
+        .catch(err => {
+          console.log(err);
+          res.json(err);
+        });
+    } else {
+      res.sendStatus(403);
+    }
+  });
+
+  app.get("/api/level2", (req, res) => {
+    if (req.user) {
+      db.Article.findAll({
+        where: {
+          clearance: 2
+        }
+      })
+        .then(results => res.json(results))
+        .catch(err => {
+          console.log(err);
+          res.json(err);
+        });
+    } else {
+      res.sendStatus(403);
+    }
+  });
+
+  app.get("/api/level3", (req, res) => {
+>>>>>>> b03251380147a0118d9db8f572cf92b44e092fc9
+    if (req.user) {
+      db.Article.findAll({
+        where: {
+          clearance: 3
         }
       })
         .then(results => res.json(results))
