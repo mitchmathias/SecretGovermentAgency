@@ -1,6 +1,11 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+<<<<<<< HEAD
+=======
+const { Op } = require("sequelize");
+const { handlebars } = require("hbs");
+>>>>>>> 37bb49f6ee6d5946bd03933b8c05fd759a411df6
 // const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
@@ -70,6 +75,12 @@ module.exports = function(app) {
         });
     } else {
       res.sendStatus(403);
+    }
+  });
+
+  app.get("/my-profile", (req, res) => {
+    if (req.user) {
+      res.render("profile", { clearance: req.user.clearance });
     }
   });
 };
