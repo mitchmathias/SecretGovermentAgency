@@ -2,7 +2,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 const { Op } = require("sequelize");
-const { handlebars } = require("hbs");
+//const { handlebars } = require("hbs");
 // const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
