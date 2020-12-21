@@ -87,7 +87,10 @@ module.exports = function(app) {
 
   app.get("/my-profile", (req, res) => {
     if (req.user) {
-      res.render("profile", { clearance: req.user.clearance });
+      res.render("profile", {
+        clearance: req.user.clearance,
+        name: req.user.email
+      });
     }
   });
 };
