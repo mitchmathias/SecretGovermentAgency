@@ -17,6 +17,7 @@ $(document).ready(() => {
     if (!userData.email || !userData.password || !userData.clearance) {
       return;
     }
+
     // If we have an email and password, run the signUpUser function
     signUpUser(userData.email, userData.password, userData.clearance);
     emailInput.val("");

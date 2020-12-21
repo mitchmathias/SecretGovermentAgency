@@ -13,6 +13,7 @@ $(document).ready(() => {
     };
 
     if (!userData.email || !userData.password) {
+      //tested and works
       return;
     }
 
