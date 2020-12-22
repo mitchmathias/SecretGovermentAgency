@@ -64,18 +64,34 @@
 </nav>
 
 <form id="addmat" style="margin-left: 10px;">
-    <p>Title</p><input type="text" id="title" placeholder="Title"><br>
-    <p>Body</p><textarea type="text" rows="3" cols="80" id="body" placeholder="Body"></textarea><br>
-    <p>Clearance</p><input type="text" id="clearance" placeholder="Clearance"><br>
-    <p>Position</p><input type="text" id="position" placeholder="Position"><br>
-    <button id="addbtn" type="submit">Submit</button>
+    <div class="field">
+        <p>Title</p>
+        <input type="text" id="title" placeholder="Title">
+    </div>
+    <div class="field">
+        <p>Article content</p>
+        <textarea type="text" rows="3" cols="80" id="body" placeholder="Body"></textarea>
+    </div>
+    <div class="field">
+        <p>Clearance level</p>
+        <input type="text" id="clearance" placeholder="Clearance">
+    </div>
+    <div class="field">
+        <p>Position taken</p>
+        <input type="checkbox" id="position" placeholder="Position">
+    </div>
+    <div class="field">
+        <button id="addbtn" type="submit">Submit</button>
+    </div>
 </form>
 
 <footer class="footer">
-  <div class="content has-text-centered">
-    <p> All Information on this website is classified as <strong>Top Secret</strong> and anyone viewing it agrees to keep it secret.</p>
-    <p>Willfully leaking any information on this page is a federal crime and punishable by a minimun <strong>100 years</strong> in Prison and a <strong>$1,000,000,000</strong>  fine.
-    </p>
-  </div>
+    <div class="content has-text-centered">
+        <p> All Information on this website is classified as <strong>Top Secret</strong> and anyone viewing it agrees to
+            keep it secret.</p>
+        <p>Willfully leaking any information on this page is a federal crime and punishable by a minimun <strong>100
+                years</strong> in Prison and a <strong>$1,000,000,000</strong> fine.
+        </p>
+    </div>
 </footer>
 <script type="text/javascript" src="/js/add.js"></script>

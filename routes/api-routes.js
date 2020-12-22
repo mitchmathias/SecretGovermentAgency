@@ -145,10 +145,11 @@ module.exports = function(app) {
       title: req.body.title,
       body: req.body.body,
       clearance: req.body.clearance,
-      position: req.body.position
+      position: req.body.position,
+      UserId: req.user.id
     })
       .then(() => {
-        return res.redirect(307, "/members");
+        return res.sendStatus(200);
       })
       .catch(err => {
         return res.status(401).json(err);

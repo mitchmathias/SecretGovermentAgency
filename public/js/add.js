@@ -13,7 +13,7 @@ $(document).ready(() => {
       title: titleInput.val(),
       body: bodyInput.val(),
       clearance: clearanceInput.val(),
-      position: positionInput.val()
+      position: positionInput.is(":checked")
     };
     if (!articleData) {
       return;
