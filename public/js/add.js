@@ -15,21 +15,25 @@ $(document).ready(() => {
       clearance: clearanceInput.val(),
       position: positionInput.val()
     };
-    console.log(articleData);
     if (!articleData) {
       return;
     }
     addMaterial(
+      // JSON.parse(
+      //   JSON.stringify(   these did not work
       articleData.title,
       articleData.body,
       articleData.clearance,
       articleData.position
+      //   )
+      // )
     );
   });
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
   function addMaterial(title, body, clearance, position) {
-    console.log("addMaterial function running");
+    console.log(title, body, clearance, position);
+    //works up until this point, then 401 error
     $.post("/api/add-material", {
       title: title,
       body: body,
@@ -37,6 +41,7 @@ $(document).ready(() => {
       position: position
     })
       .then(() => {
+        console.log("addjs complete");
         window.location.replace("/members");
         // If there's an error, log the error
       })

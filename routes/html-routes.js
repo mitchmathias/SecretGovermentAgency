@@ -36,7 +36,7 @@ module.exports = function(app) {
     return res.render("login");
   });
 
-  app.get("/add-material", isAuthenticated, (req, res) => {
+  app.get("/add-material", (req, res) => {
     if (req.user) {
       return res.render("add-material");
     }
