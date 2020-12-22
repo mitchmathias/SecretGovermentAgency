@@ -36,6 +36,13 @@ module.exports = function(app) {
     return res.render("login");
   });
 
+  app.get("/add-material", isAuthenticated, (req, res) => {
+    if (req.user) {
+      return res.render("add-material");
+    }
+    return res.render("login");
+  });
+
   // Files for non authenticated users
   app.get("/nosecrets", (req, res) => {
     // If the user already has an account send them to the members page

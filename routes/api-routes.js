@@ -26,8 +26,7 @@ module.exports = function(app) {
     db.User.create({
       email: req.body.email,
       password: req.body.password,
-      clearance: req.body.clearance,
-      ip: req.body.ip
+      clearance: req.body.clearance
     })
       .then(() => {
         return res.redirect(307, "/api/login");
@@ -139,5 +138,20 @@ module.exports = function(app) {
         name: req.user.email
       });
     }
+  });
+
+  app.post("/api/add-material", (req, res) => {
+    db.Article.create({
+      title: req.body.email,
+      body: req.body.password,
+      clearance: req.body.clearance,
+      position: req.body.ip
+    })
+      .then(() => {
+        return res.redirect(307, "/members");
+      })
+      .catch(err => {
+        return res.status(401).json(err);
+      });
   });
 };
