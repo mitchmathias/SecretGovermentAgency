@@ -1,89 +1,63 @@
-# Secret Goverment Agency
-Deployed heroku link https://calm-river-70620.herokuapp.com/
 
-Secret Goverment Agency is a that secret department that is operated by the Federal Government of breakout room 2. This Department opperates by the people, for the people. There are no "secrets" here. The government wants you to know that we would never keep secrets from you. its Our belief that honesty is the best policy, and thats what we live by. Only users who are signed in able to access the secrets files hidden within the database.
+# Department of Secret Information
 
+## Description: 
+We set out to create a database driven application in which we could showcase a system of security clearance allowing access to different data from the database. We did so utilizing a node and express server with a handlebars template and mysql/sequelize database and orm. 
+## Table of Contents
 
+-[Description](#description)
 
-## Overview
-Welcome to Project 2! This is yet another important milestone in your full-stack journey: designing and building your first full-stack web application. You and your team will design and build an app using the MVC paradigm and your own server-side API. You will also continue to add to your professional repertoire with testing, continuous integration and linting tools.
+-[Installation](#installation)
 
-## Key Topics
-* Linting
-* Continuous integration
-* Testing
+-[Instructions](#instructions)
 
-## Comprehension Check
-You will be employer-ready if you can answer the following questions:
-1. Why is TDD?
-2. What is linting?
-3. What is continuous integration?
+-[Licenses](#licenses)
 
-## Learning Objectives
-You will be employer-competitive if you are able to:
-* Configure linting and continuous integration with Travis CI.
-* Explain and implement unit tests
-* Design, build and deploy a full-stack web application to Heroku
+-[Deployed](#deployed)
 
-## Description 
+-[Contact](#contact)
 
-Website containing all of our wonderful goverment secrets. Please do not read unless you are authoried to view these top secret secrets.
+-[Contributors](#Contributors)
 
+-[Testing](#Tests)
 
-Application Requirements
+## Installation:
+We utilized a series of technologies including mySql, sequelize, jquery, bulma, morgan, express, express-handlebars, bcrypt and passport. For usage of the site, no additional installation is needed.  
+## Instructions:
+Our app has an intuitive interface, which with just a signup, can be accessed easily.
+### Licenses: 
+![license](https://img.shields.io/badge/license-mit-red)
+### Deployed: 
+[https://calm-river-70620.herokuapp.com/](https://calm-river-70620.herokuapp.com/)
 
+![image](/public/images/signup.png)
 
-Must use a Node and Express server
+![image](/public/images/home.png)
 
+### Contact:
 
-Must use Handlebars.js as the template engine
+[Github](https://github.com/mitchmathias/SecretGovermentAgency)
 
+### Contributors:
 
-Must be backed by a MySQL database with a Sequelize ORM
-
-
-Must utilize both GET and POST routes for retrieving and adding new data
-
-
-Must be deployed using Heroku (with data)
+Mitch Mathias
+[mitch.mathias96@gmail.com](mitch.mathias96@gmail.com)
+[https://github.com/mitchmathias](https://github.com/mitchmathias)
 
 
-Must utilize at least one new library, package, or technology that we haven’t discussed
+Chris Lyko
+[chrislyko@gmail.com](chrislyko@gmail.com)
+[https://github.com/KrixLeekz](https://github.com/KrixLeekz)
 
 
-Must have a polished front end/UI
+Thom Rattana
+[thomr95@gmail.com](thomr95@gmail.com)
+[https://github.com/Trattana95](https://github.com/Trattana95)
 
 
-Must have a folder structure that meets the MVC paradigm
+Peter Boyle
+[Boyle.Peter614@gmail.com](Boyle.Peter614@gmail.com)
+[https://github.com/boylepeter](https://github.com/boylepeter)
 
-
-Must meet good quality coding standards (indentation, scoping, naming)
-
-
-Must protect API keys in Node with environment variables
-
-
-
-Presentation Requirements
-Use this project presentation template to address the following:
-
-
-Elevator pitch: a one minute description of your application
-
-
-Concept: What is your user story? What was your motivation for development?
-
-
-Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
-
-
-Demo: Show your stuff!
-
-
-Directions for Future Development
-
-
-Links to to the deployed application and the GitHub repository. Use this guide for deploying your application to Heroku if you need a reminder on how to deploy!
-
-![Screenshot (25)](https://user-images.githubusercontent.com/72782320/102904153-4ec39100-443f-11eb-84bd-b419a2f8eba9.png)
-
+### Tests: 
+We tested using local and heroku servers. 
