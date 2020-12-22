@@ -56,26 +56,56 @@
 
         <div class="navbar-end">
             <div class="navbar-item">
-                <div class="buttons">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-light" href="/logout">
+                            Logout
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 </nav>
 
-<form id="addmat" style="margin-left: 10px;">
+{{!-- <form id="addmat" style="margin-left: 10px;">
     <p>Title</p><input type="text" id="title" placeholder="Title"><br>
     <p>Body</p><textarea type="text" rows="3" cols="80" id="body" placeholder="Body">Body</textarea><br>
     <p>Clearance</p><input type="text" id="clearance" placeholder="Clearance"><br>
     <p>Position</p><input type="text" id="position" placeholder="Position"><br>
     <button id="addbtn" type="submit">Submit</button>
 </form>
-
-<footer class="footer">
-  <div class="content has-text-centered">
-    <p> All Information on this website is classified as <strong>Top Secret</strong> and anyone viewing it agrees to keep it secret.</p>
-    <p>Willfully leaking any information on this page is a federal crime and punishable by a minimun <strong>100 years</strong> in Prison and a <strong>$1,000,000,000</strong>  fine.
-    </p>
+  --}}
+<form>
+<div class="field">
+  <div class="control">
+    <input id="title" class="input is-light" type="text" placeholder="Title">
+  </div>c
+</div>
+<div class="field">
+  <div class="control">
+    <input id="body" class="input is-light" type="text" placeholder="Body">
   </div>
+</div>
+<div class="field">
+  <div class="control">
+    <input id="clearance" class="input is-light" type="number" placeholder="Clearance">
+  </div>
+</div>
+<div class="field">
+  <div class="control">
+    <input id="position" class="input is-light" type="text" placeholder="True or False">
+  </div>
+</div>
+<button id="addbtn" type="submit">Submit</button>
+</form>
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p> All Information on this website is classified as <strong>Top Secret</strong> and anyone viewing it agrees to
+            keep it secret.</p>
+        <p>Willfully leaking any information on this page is a federal crime and punishable by a minimun <strong>100
+                years</strong> in Prison and a <strong>$1,000,000,000</strong> fine.
+        </p>
+    </div>
 </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="/js/add.js"></script>
