@@ -57,23 +57,17 @@
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
-                    <a class="button is-primary" href="/signup">
-                        <strong>Sign up</strong>
-                    </a>
-                    <a class="button is-light" href="/login">
-                        Log in
-                    </a>
                 </div>
             </div>
         </div>
     </div>
 </nav>
 
-<form id="addmat">
-    <input id="title" placeholder="Title">Title</input>
-    <input id="body" placeholder="Body">Body</input>
-    <input id="clearance" placeholder="Clearance">Clearance</input>
-    <input id="position" placeholder="Position">Position</input>
+<form id="addmat" style="margin-left: 10px;">
+    <p>Title</p><input type="text" id="title" placeholder="Title"><br>
+    <p>Body</p><textarea type="text" rows="3" cols="80" id="body" placeholder="Body">Body</textarea><br>
+    <p>Clearance</p><input type="text" id="clearance" placeholder="Clearance"><br>
+    <p>Position</p><input type="text" id="position" placeholder="Position"><br>
     <button id="addbtn" type="submit">Submit</button>
 </form>
 
@@ -84,3 +78,4 @@
     </p>
   </div>
 </footer>
+<script type="text/javascript" src="/js/add.js"></script>

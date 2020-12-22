@@ -15,15 +15,21 @@ $(document).ready(() => {
       clearance: clearanceInput.val(),
       position: positionInput.val()
     };
-
+    console.log(articleData);
     if (!articleData) {
       return;
     }
-    addMaterial(articleData);
+    addMaterial(
+      articleData.title,
+      articleData.body,
+      articleData.clearance,
+      articleData.position
+    );
   });
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
   function addMaterial(title, body, clearance, position) {
+    console.log("addMaterial function running");
     $.post("/api/add-material", {
       title: title,
       body: body,

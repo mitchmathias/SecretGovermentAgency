@@ -142,10 +142,10 @@ module.exports = function(app) {
 
   app.post("/api/add-material", (req, res) => {
     db.Article.create({
-      title: req.body.email,
-      body: req.body.password,
+      title: req.body.title,
+      body: req.body.body,
       clearance: req.body.clearance,
-      position: req.body.ip
+      position: req.body.position
     })
       .then(() => {
         return res.redirect(307, "/members");
