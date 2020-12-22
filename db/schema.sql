@@ -1,6 +1,6 @@
 -- Drops the passport if it exists currently --
-DROP DATABASE IF EXISTS passport_demo;
+DROP DATABASE IF EXISTS tsc_db;
 -- Creates the "passport" database --
-CREATE DATABASE passport_demo;
+CREATE DATABASE tsc_db;
 
-USE passport_demo;
+USE tsc_db;
